@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+$main_color:#3A5487;
+
+.header_link_section{
+
+    float : right;
+    margin-right: 50px;
+    margin-top: 30px;
+
+    a{
+        text-decoration: none;
+        width: 100px;
+        height: 30px;
+        display: inline-block;
+        font-size: 15px;
+        font-family: sans-serif;
+        color: $main_color;
+        cursor: pointer;
+        font-weight: 500;
+
+        
+
+    }
+
+    a:hover{
+        color: green;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+@media(min-width:420px) and (max-width:576px){
+    .hide-xs{
+        display: none;
+    }
+}
+
+@media(min-width:576px) and (max-width:2000px) {
+    .hide-xl{
+        display: none;
+    }
+}
+
+.top-logo{
+    width: 55px;
+    height: 55px;
+    margin-left: 50px;
+    margin-top: 10px; 
+    float:left;
+}
+
+@media only screen and (max-width:420px) {
+    .top-logo{
+        width: 85px;
+        height: 55px;
+        margin-left: 10px;
+        margin-top: 10px; 
+        float:left;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .hide-xs{
+        display: none;
+    }
+    .main_title{
+        float: left;
+        color:$main_color;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: Roboto;
+        margin-left: 10px;
+       
+    }
+}
+
+.main_title{
+    float: left;
+    color:$main_color;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Roboto;
+    margin-left: 20px;
+    span{
+        color: black;
+        font-size: 15px;
+        font-weight: normal;
+        font-style: italic;
+        margin-left: 5px;
+    }
+}
+
+
+
+.odd ion-card{
+    width:164px;height:124px;
+    margin-bottom: 20px;
+    :hover{
+        border: 2px solid greenyellow;
+    }
+    cursor: pointer;
+    background: linear-gradient(45deg, #2C73C1, #C241EA);
+
+}
+
+.even ion-card{
+    width:164px;height:124px;
+    margin-bottom: 20px;
+    :hover{
+        border: 2px solid greenyellow;
+    }
+    cursor: pointer;
+    background: linear-gradient(45deg, #E334C5, #E36C34);
+
+}
+
+.service_img{
+    width:64px;height:64px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    pointer-events: none;
+
+    :hover{
+        border: none;
+    }
+
+}
+
+.service_title{
+    display: block;
+    word-wrap: break-word;
+    font-size:15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+    color:white;
+    pointer-events: none;
+
+    :hover{
+        border: none;
+    }
+
+}
+
+.service_title1{
+    display: block;
+    word-wrap: break-word;
+    font-size:15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+    color:black;
+    pointer-events: none;
+
+    :hover{
+        border: none;
+    }
+
+}
+
+.package_card{
+    padding-bottom: 25px;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    
+
+    .package_header{
+        padding: 30px;
+        background: linear-gradient(45deg, #f321d6, #5121f3);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+    
+        label{
+            text-align: center;
+        }
+    
+    }
+    
+    .package_content{
+        list-style: none;
+        color: #777;
+        font-size: 15px;
+        text-transform: uppercase;
+        width: 100%;
+        margin: 0; /* To remove default bottom margin */ 
+        padding: 0; /* To remove default left padding */
+    
+        li{
+            text-decoration: none;
+            margin-top: 15px;
+            margin-bottom: 18px;
+            width: 100%;
+            text-align: center;
+    
+            span{
+                color:#5f5f5f;
+                font-weight: 700;
+            }
+    
+        }
+
+       
+    
+    }
+
+    button{
+        position: relative;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+        padding: 10px 30px;
+        font-size: 13px;
+        color: white;
+        background: linear-gradient(45deg, #f321d6, #5121f3);
+        border-radius: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+$blue_bg:#008bff;
+$submit_color:#329d31;
+
+
+.container{
+    background: $blue_bg;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.logo_img{
+    width: 200px;
+    height: auto;
+    position: relative;;
+    margin-top: 100px;
+}
+
+.title_img{
+    width: 300px;
+    height: auto;
+    position: relative;;
+    margin-top: 25px;
+}
+
+.dot_img{
+    width: 103px;
+    height: auto;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.sign-in-button{
+    width: 80%;
+    height: 30px;
+    left: 10%;
+    right: 10%;
+    bottom: 20px;
+    border-radius: 5px;
+    background: white;
+    position: absolute;
+}
+
+.sign-in-button label{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.w_title{
+    font-size: 25pt;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 700;
+}
+
+.w_desc{
+    font-size: 15pt;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif ;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.w_img{
+    width: 70px;
+    height: auto;
+    position: relative;;
+    margin-top: 100px;
+}
+
+.toolbar{
+    background: $blue_bg;
+    background-color: $blue_bg;
+}
+
+
+

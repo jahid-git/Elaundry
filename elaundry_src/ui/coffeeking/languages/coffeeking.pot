@@ -1,0 +1,1257 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-03-07 17:54+0200\n"
+"PO-Revision-Date: 2017-08-10 09:30+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;e_;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: css\n"
+
+#: 404.php:24
+msgid "Sorry Page Was Not Found"
+msgstr ""
+
+#: 404.php:25
+msgid "Home Page"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:325
+msgid "Install Required Plugins"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:326
+msgid "Install Plugins"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:328
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:331
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:383
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:384
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:825
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2531
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:385
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3157
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:386
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:388
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:390
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:392
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:393
+msgid "Dismiss this notice"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:394
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:395
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:932
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:932
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:935
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:1980
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2271
+msgid "Required"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2274
+msgid "Recommended"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2290
+msgid "WordPress Repository"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2293
+msgid "External Source"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2296
+msgid "Pre-Packaged"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2313
+msgid "Not Installed"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2317
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2319
+msgid "Active"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2325
+msgid "Required Update not Available"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2328
+msgid "Requires Update"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2331
+msgid "Update recommended"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2488
+msgid "Installed version:"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2496
+msgid "Minimum required version:"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2508
+msgid "Available version:"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2531
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2545
+msgid "Plugin"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2546
+msgid "Source"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2547
+#: framework-customizations/theme/options/general-settings.php:194
+msgid "Type"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2551
+msgid "Version"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2552
+msgid "Status"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2601
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2606
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2612
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2682
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2715
+msgid "Install"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2721
+msgid "Update"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2724
+msgid "Activate"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2755
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2798
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2906
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:2932
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3156
+msgid "Plugin activation failed."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3496
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3499
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3505
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3507
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3509
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3511
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3514
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3516
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: TGM-Plugin-Activation/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: comments.php:25
+msgid "Comments"
+msgstr ""
+
+#: comments.php:32 comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:33 comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:34 comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:74
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:75
+msgid "Add Comment"
+msgstr ""
+
+#: comments.php:77
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr ""
+
+#: comments.php:80
+msgid "Your Message"
+msgstr ""
+
+#: comments.php:85
+msgid "Name"
+msgstr ""
+
+#: comments.php:89
+msgid "Email"
+msgstr ""
+
+#: footer.php:141
+msgid "Footer"
+msgstr ""
+
+#: footer.php:142
+msgid "To add your widgets click here"
+msgstr ""
+
+#: footer.php:165
+msgid "Like-themes &copy; All Rights Reserved - 2017"
+msgstr ""
+
+#: footer.php:168
+msgid "TOP"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:5
+msgid "CoffeeKing"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:11
+msgid "Main Color"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:17
+msgid "Secondary Color"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:23
+msgid "Gray Color"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:29
+msgid "White Color"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:35
+msgid "Black Color"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:40
+msgid "Border Radius"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:50
+msgid "Navbar Opacity (0 - 1)"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:60
+msgid "Navbar Sticked Opacity (0 - 1)"
+msgstr ""
+
+#: framework-customizations/theme/options/customizer.php:72
+msgid "Logo Max Height, px"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:9
+msgid "General"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:13
+msgid "General Settings"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:17
+#: framework-customizations/theme/options/posts/page.php:89
+msgid "Blog Layout"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:18
+msgid "Default blog page layout."
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:21
+#: framework-customizations/theme/options/posts/page.php:94
+msgid "One Column"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:22
+#: framework-customizations/theme/options/general-settings.php:32
+#: framework-customizations/theme/options/posts/page.php:95
+#: framework-customizations/theme/options/posts/page.php:106
+msgid "Two Columns"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:23
+#: framework-customizations/theme/options/general-settings.php:33
+#: framework-customizations/theme/options/posts/page.php:96
+#: framework-customizations/theme/options/posts/page.php:107
+msgid "Three Columns"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:28
+msgid "Default Gallery Layout"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:29
+msgid "Default galley page layout."
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:34
+#: framework-customizations/theme/options/posts/page.php:108
+msgid "Four Columns"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:39
+msgid "Blogs Sidebar"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:42
+#: framework-customizations/theme/options/general-settings.php:51
+#: framework-customizations/theme/options/general-settings.php:64
+#: framework-customizations/theme/options/general-settings.php:87
+#: framework-customizations/theme/options/general-settings.php:168
+msgid "Disabled"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:43
+#: framework-customizations/theme/options/general-settings.php:52
+#: framework-customizations/theme/options/general-settings.php:88
+msgid "Enabled"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:48
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:61
+msgid "Page Loader"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:65
+msgid "Progress Bar"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:66
+msgid "Fading Dots"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:67
+msgid "Static Image"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:75
+msgid "Page Loader Image"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:83
+msgid "WooCommerce Product Hover Zoom"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:85
+msgid "Enables mouse hover zoom in single product page"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:93
+msgid "Google API Key"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:94
+msgid "Required for contacts page, also used in widget"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:110
+msgid "Excerpt Blog Size"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:111
+msgid "Automaticly cuts content for blogs"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:116
+msgid "Excerpt WooCommerce Size"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:117
+msgid "Automaticly cuts description for products"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:126
+#: framework-customizations/theme/options/general-settings.php:130
+msgid "Media"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:134
+msgid "Logo Dark"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:135
+#: framework-customizations/theme/options/general-settings.php:140
+msgid "Upload logo"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:139
+msgid "Logo White (Footer)"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:144
+msgid "Inner Header Background"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:145
+msgid "By default header is gray, you can replace it with background image"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:149
+msgid "404 Page Background"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:157
+#: framework-customizations/theme/options/posts/page.php:17
+msgid "Navbar"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:161
+msgid "Navbar Settings"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:165
+msgid "Navbar sticked"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:169
+msgid "Sticked navbar"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:174
+msgid "Always show Basket icon"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:175
+msgid "Basket Icon will be visible in navbar with 3-bars menu."
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:178
+msgid "Desktop Only"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:179
+msgid "Visible Always"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:184
+msgid "Menu Icons"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:197
+#: searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:198
+msgid "WooCommerce Cart"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:199
+msgid "User Profile"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:200
+msgid "Social Icon"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:207
+msgid "Count"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:210
+msgid "Show count label"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:211
+msgid "Hide count label"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:218
+msgid "Logout"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:221
+msgid "Show logout popup"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:222
+msgid "Hide logout popup"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:229
+msgid "Label"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:233
+#: framework-customizations/theme/options/posts/services.php:15
+msgid "External Link"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:250
+#: framework-customizations/theme/options/posts/team.php:20
+msgid "Icon"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:253
+#: framework-customizations/theme/options/posts/page.php:6
+#: framework-customizations/theme/options/posts/page.php:31
+#: framework-customizations/theme/options/posts/page.php:93
+#: framework-customizations/theme/options/posts/page.php:105
+msgid "Default"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:254
+msgid "FontAwesome"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:256
+msgid "For social icons you need to use FontAwesome in any case."
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:266
+msgid "Select Icon"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:293
+msgid "Fonts"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:298
+msgid "Fonts Settings"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:302
+msgid "Paragraph (text) Font"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:304
+msgid "Use https://fonts.google.com/ to find font you need"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:322
+msgid "Additonal Text weights"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:323
+#: framework-customizations/theme/options/general-settings.php:347
+msgid "Coma separated weights, for example: \"600,800\""
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:327
+msgid "Headers Font"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:346
+msgid "Additonal Headers Weights"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:356
+#: framework-customizations/theme/options/posts/page.php:79
+msgid "Footer Block"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:361
+msgid "Footer Settings"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:365
+#: framework-customizations/theme/options/posts/page.php:69
+msgid "Subscribe Block"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:366
+msgid "You must install MailChimp plugin to use it"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:369
+msgid "Default page settings"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:370
+msgid "Always visible"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:371
+msgid "Always hidden"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:376
+msgid "Hide Go Top button in footer"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:381
+msgid "Footer Block Background"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:385
+msgid "Copyrights"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:389
+msgid "Hide Footer 1 Widget"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:394
+msgid "Hide Footer 2 Widgets"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:399
+msgid "Hide Footer 3 Widgets"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:404
+msgid "Hide Footer 4 Widgets"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:409
+msgid "Hide Footer 1 Widgets on mobile"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:414
+msgid "Hide Footer 2 Widgets on mobile"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:419
+msgid "Hide Footer 3 Widgets on mobile"
+msgstr ""
+
+#: framework-customizations/theme/options/general-settings.php:424
+msgid "Hide Footer 4 Widgets on mobile"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/events.php:11
+msgid "Event Date"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/gallery.php:11
+msgid "Multi Upload"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/menu.php:11
+#: framework-customizations/theme/options/posts/tariff.php:11
+msgid "Price"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/menu.php:15
+msgid "Weight"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:10 inc/hooks.php:279
+msgid "Layout"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:20
+msgid "Default White Background"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:21
+msgid "Transparent (on light background)"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:22
+msgid "Transparent (on dark background)"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:23
+#: framework-customizations/theme/options/posts/page.php:32
+#: framework-customizations/theme/options/posts/page.php:62
+#: framework-customizations/theme/options/posts/page.php:74
+#: framework-customizations/theme/options/posts/page.php:84
+msgid "Hidden"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:28
+msgid "Page Header"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:37
+msgid "Body Color"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:39
+msgid "Page Background Color"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:41
+msgid "Default White"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:42 functions.php:675
+msgid "Black Dark"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:47
+msgid "Content Margin"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:49
+msgid "Margin control for content"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:51
+msgid "Top And Bottom"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:52
+msgid "Top Only"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:53
+msgid "Bottom Only"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:54
+msgid "Margin Removed"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:59
+msgid "Sidebar"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:63
+msgid "Sidebar Left"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:64
+msgid "Sidebar Right"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:71
+msgid "Subscribe block before footer. Can be edited from Sections Menu."
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:73
+#: framework-customizations/theme/options/posts/page.php:83
+msgid "Visible"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:81
+msgid "Footer block before footer. Can be edited from Sections Menu."
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:90
+msgid "Used only for blog pages. You may ignore them on static pages."
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:101
+msgid "Gallery Layout"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/page.php:102
+msgid "Used only for gallery pages. You may ignore them on static pages."
+msgstr ""
+
+#: framework-customizations/theme/options/posts/sections.php:8
+#: framework-customizations/theme/options/posts/sections.php:9
+msgid "Theme Block"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/sections.php:12
+msgid "Not Assigned"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/sections.php:13
+msgid "Subscribe"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/sections.php:14
+msgid "Top Bar"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/services.php:11
+msgid "Short Description"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/tariff.php:12
+msgid "Use brackets to set units as postfix (for ex: {{ /unit }} )"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/tariff.php:16
+msgid "Button Link"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/tariff.php:21
+msgid "Button Header"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/team.php:11
+#: framework-customizations/theme/options/posts/testimonials.php:11
+msgid "Subheader"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/team.php:15
+msgid "Social Icons For List"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/team.php:24
+msgid "Link"
+msgstr ""
+
+#: framework-customizations/theme/options/posts/team.php:25
+msgid "If needed"
+msgstr ""
+
+#: functions.php:36
+msgid "Like-Themes Plugins"
+msgstr ""
+
+#: functions.php:43
+msgid "WPBakery Page Builder"
+msgstr ""
+
+#: functions.php:49
+msgid "Envato Market"
+msgstr ""
+
+#: functions.php:55
+msgid "Breadcrumb-navxt"
+msgstr ""
+
+#: functions.php:60
+msgid "Contact Form 7"
+msgstr ""
+
+#: functions.php:65
+msgid "Post-views-counter"
+msgstr ""
+
+#: functions.php:70
+msgid "Unyson"
+msgstr ""
+
+#: functions.php:75
+msgid "MailChimp for WordPress"
+msgstr ""
+
+#: functions.php:80
+msgid "WooCommerce"
+msgstr ""
+
+#: functions.php:114 functions.php:119
+msgid "Edit"
+msgstr ""
+
+#: functions.php:131
+msgid "by"
+msgstr ""
+
+#: functions.php:167
+msgid "All Blog Posts"
+msgstr ""
+
+#: functions.php:172
+msgid "Home"
+msgstr ""
+
+#: functions.php:177
+#, php-format
+msgid "Year Archives: %s"
+msgstr ""
+
+#: functions.php:182
+#, php-format
+msgid "Month Archives: %s"
+msgstr ""
+
+#: functions.php:187
+#, php-format
+msgid "Day Archives: %s"
+msgstr ""
+
+#: functions.php:197
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: functions.php:207
+#, php-format
+msgid "Search Results: %s"
+msgstr ""
+
+#: functions.php:221
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: functions.php:236
+#, php-format
+msgid "Attachment: %s"
+msgstr ""
+
+#: functions.php:241
+msgid "404 Not Found"
+msgstr ""
+
+#: functions.php:661
+msgid "Flowing Image"
+msgstr ""
+
+#: functions.php:662
+msgid "Row with 5 Columns"
+msgstr ""
+
+#: functions.php:663
+msgid "Banners Grid"
+msgstr ""
+
+#: functions.php:664
+msgid "Open Hours"
+msgstr ""
+
+#: functions.php:665
+msgid "Water Ripples"
+msgstr ""
+
+#: functions.php:666
+msgid "Background Hidden on mobile"
+msgstr ""
+
+#: functions.php:667
+msgid "Floating Social Block"
+msgstr ""
+
+#: functions.php:668
+msgid "Displaced to top section"
+msgstr ""
+
+#: functions.php:671
+msgid "Theme Main Color"
+msgstr ""
+
+#: functions.php:672
+msgid "Second Color"
+msgstr ""
+
+#: functions.php:673
+msgid "Gray"
+msgstr ""
+
+#: functions.php:674
+msgid "Black"
+msgstr ""
+
+#: functions.php:678
+msgid "Dark Overlay"
+msgstr ""
+
+#: functions.php:679
+msgid "Pattern Overlay"
+msgstr ""
+
+#: functions.php:680
+msgid "Black Overlay"
+msgstr ""
+
+#: inc/helpers.php:196 inc/helpers.php:206
+msgid "Prev"
+msgstr ""
+
+#: inc/helpers.php:197 inc/helpers.php:208
+msgid "Next"
+msgstr ""
+
+#: inc/helpers.php:204
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/helpers.php:233
+msgid "Post navigation"
+msgstr ""
+
+#: inc/helpers.php:257
+msgid "Sticky"
+msgstr ""
+
+#: inc/hooks.php:221
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/hooks.php:256 inc/hooks.php:258
+msgid "Background may only be visible on wide screens."
+msgstr ""
+
+#: inc/hooks.php:267
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/hooks.php:270
+msgid "Display Site Title &amp; Tagline"
+msgstr ""
+
+#: inc/hooks.php:283
+msgid "Grid"
+msgstr ""
+
+#: inc/hooks.php:284
+msgid "Slider"
+msgstr ""
+
+#: inc/hooks.php:333
+msgid "Sidebar Default"
+msgstr ""
+
+#: inc/hooks.php:335 inc/hooks.php:345
+msgid "Appears in the right/left section of the site."
+msgstr ""
+
+#: inc/hooks.php:343
+msgid "Sidebar WooCommerce"
+msgstr ""
+
+#: inc/hooks.php:353
+msgid "Footer 1"
+msgstr ""
+
+#: inc/hooks.php:355 inc/hooks.php:365 inc/hooks.php:375 inc/hooks.php:385
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: inc/hooks.php:363
+msgid "Footer 2"
+msgstr ""
+
+#: inc/hooks.php:373
+msgid "Footer 3"
+msgstr ""
+
+#: inc/hooks.php:383
+msgid "Footer 4"
+msgstr ""
+
+#: inc/hooks.php:435
+msgid "CoffeeKing Demo Content"
+msgstr ""
+
+#: inc/includes/sub-includes/featured-content.php:410
+msgid "Tag Name"
+msgstr ""
+
+#: inc/includes/sub-includes/featured-content.php:415
+msgid "Don&rsquo;t display tag on front end."
+msgstr ""
+
+#: inc/menus.php:8
+msgid "Main menu"
+msgstr ""
+
+#: navbar.php:32 navbar.php:103
+msgid "Toggle navigation"
+msgstr ""
+
+#: navbar.php:69 navbar.php:123
+msgid "View your shopping cart"
+msgstr ""
+
+#: navbar.php:126
+msgid "Cart"
+msgstr ""
+
+#: tmpl/content-blog-full.php:16 tmpl/content-page.php:13
+msgid "Pages:"
+msgstr ""
+
+#: tmpl/content-blog-full.php:52
+msgid "Tags:"
+msgstr ""
+
+#: tmpl/content-blog-full.php:57
+msgid "Category:"
+msgstr ""
+
+#: tmpl/content-events.php:25 tmpl/content-item.php:23
+msgid "Read more &rarr;"
+msgstr ""
+
+#: tmpl/content-none.php:14
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: tmpl/content-none.php:18
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: tmpl/content-none.php:23
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""

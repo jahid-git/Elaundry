@@ -1,0 +1,212 @@
+<ion-app>
+<!--   <ion-router-outlet></ion-router-outlet>  -->
+<ion-menu side="start" type="overlay" menu-id="customer-menu" (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+ 
+  <ion-content>
+    <div style="width: 100%; height: 100%; background: #eaf1ea; color: black;background-color: #f8fcf8; margin-right: 10px;" class="ion-no-margin">
+
+
+      <div *ngIf="isLoggedIn" style="padding-top: 25px;">
+        <label class="option_label" style="font-size: 25px;">{{customer.name}}</label><br>
+        <label class="option_label">+880{{customer.mobile}}</label>
+      </div>
+
+      <div style="margin-top: 10px;margin-left: 15px;margin-bottom: 10px;">
+        <label style="font-size: 25px;font-family: 'Montserrat', sans-serif;font-weight: 600;">Menu</label>
+      </div>
+  
+      <div class="menu-line"></div>
+
+      <div (click)="go('customer-web')" style="height: 40px; border-top: 1px solid gray; display: flex; align-items: center;" class="ion-margin">
+        <img src="../assets/pickup_icon.png" class="icon_img">
+        <label class="option_label">Schedule a wash</label>
+      </div>
+      <div *ngIf="!isLoggedIn"  (click)="go('login')" style="height: 40px;border-top: 1px solid gray;display: flex; align-items: center;" class="ion-margin">
+        <img src="../assets/logout_icon.png" class="icon_img">
+        <span class="option_label">Login</span>
+      </div>
+      <div  *ngIf="isLoggedIn" (click)="go('customer-orders')" style="height: 40px;border-top: 1px solid gray;display: flex; align-items: center;" class="ion-margin">
+        <img src="../assets/orders_icon.png" class="icon_img" >
+        <span class="option_label">My Orders</span>
+      </div>
+      <div  *ngIf="isLoggedIn" (click)="go('user-profile')" style="height: 40px;border-top: 1px solid gray;display: flex; align-items: center;" class="ion-margin">
+        <img src="../assets/profile_icon.png" class="icon_img">
+        <span class="option_label">My Profile</span>
+      </div>
+      <div *ngIf="isLoggedIn" (click)="LogoutClicked()" style="height: 40px;border-top: 1px solid gray;display: flex; align-items: center;" class="ion-margin">
+        <img src="../assets/logout_icon.png" class="icon_img">
+        <span class="option_label">Logout</span>
+      </div>
+     
+
+  </div>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="start" type="overlay" menu-id="admin-menu" (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+  
+  
+  <ion-content>
+    <section class="side_menu">
+      <nav>
+        <label>Welcome to,<br>Admin Panel</label>
+        <a (click)="go('admin-home')" class="active"><i class="fa fa-home" aria-hidden="true"></i>
+          Dashboard</a>
+        <a (click)="go('customer-management')"><i class="fa fa-users" aria-hidden="true"></i>
+          Customer Management</a>
+        <a><i class="fa fa-first-order" aria-hidden="true"></i>
+          Order Management
+          <section>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','CreateOrder')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Create Order</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','CurrentOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Current Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','TodayOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Today's Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','SearchOrder')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Search Order</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','DeliveredOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Delivered Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','AllOpenOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              All Open Orders</a>
+          </section> 
+        </a>
+
+
+        <a><i class="fa fa-product-hunt" aria-hidden="true"></i>
+          Product Management
+          <section>
+          <a class="m_table_head"  (click)="SubCatClicked('admin-manage-products','ManageItems')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Items</a>
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageServices')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Services</a>
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageVendors')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Vendors</a>
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageDBs')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage DeliveryExe</a>
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageAreas')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Areas</a>  
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageCoupons')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Coupons</a>  
+          <a class="m_table_head" (click)="SubCatClicked('admin-manage-products','ManageBanners')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Manage Banners</a>  
+          </section>
+        </a>
+
+        <a (click)="go('comm-customer')"><i class="fa fa-users" aria-hidden="true"></i>
+          Commercial Customer</a>  
+        <a><i class="fa fa-users" aria-hidden="true"></i>
+          Commercial Orders
+          <section>
+            <a class="m_table_head" *ngIf="false"  (click)="SubCatClicked('order-management','CreateOrder')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Create Order</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','CurrentOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Current Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','TodayOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Today's Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','SearchOrder')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Search Order</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','DeliveredOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Delivered Orders</a>
+            <a class="m_table_head"  (click)="SubCatClicked('order-management','AllOpenOrders')"><i class="fa fa-cog" aria-hidden="true"></i>
+              All Open Orders</a>
+          </section> 
+        </a>  
+        <a><i class="fa fa-cogs" aria-hidden="true"></i>
+          Settings
+          <section>
+            <a class="m_table_head"  (click)="SubCatClicked('settings','ManageTimeSlots')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Time-Slots</a>
+            <a *ngIf="false" class="m_table_head"  (click)="SubCatClicked('settings','ManageAreas')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Areas</a>
+            <a *ngIf="false" class="m_table_head"  (click)="SubCatClicked('settings','ManageCoupons')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Coupons</a>
+            <a *ngIf="false" class="m_table_head"  (click)="SubCatClicked('settings','ManageBanners')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Banners</a>
+            <a class="m_table_head"  (click)="SubCatClicked('settings','Misc')"><i class="fa fa-cog" aria-hidden="true"></i>
+              Misc</a>
+          
+          </section> 
+        </a>
+        <a (click)="go('totals')"><i class="fa fa-cogs" aria-hidden="true"></i>
+          Totals</a>
+        <a (click)="go('payments')"><i class="fa fa-cogs" aria-hidden="true"></i>
+          Payments</a>
+        <a (click)="go('view-orders')"><i class="fa fa-cogs" aria-hidden="true"></i>
+          View Orders</a>
+        <a (click)="go('view-corders')"><i class="fa fa-cogs" aria-hidden="true"></i>
+          View Orders (C)</a>
+            
+      </nav>    
+    </section>
+    
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="start" type="overlay" menu-id="delivery-menu" (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+  
+  
+  <ion-content>
+    <section class="side_menu">
+      <nav>
+        <label>Welcome to,<br>Delivery Panel</label>
+        <a (click)="SubCatClickedD('ShowOpenOrders')" ><i class="fa fa-home" aria-hidden="true"></i>
+          Open Orders</a>
+        <a (click)="SubCatClickedD('ShowPickups')" ><i class="fa fa-home" aria-hidden="true"></i>
+          Pickups</a>
+        <a (click)="SubCatClickedD('ShowDeliveries')" ><i class="fa fa-users" aria-hidden="true"></i>
+          Deliveries</a>
+        <a (click)="SubCatClickedD('ShowPickedUps')" ><i class="fa fa-home" aria-hidden="true"></i>
+          Picked Up</a>
+        <a (click)="SubCatClickedD('ShowDelivered')" ><i class="fa fa-users" aria-hidden="true"></i>
+          Delivered</a>
+        <a (click)="SubCatClickedD('cShowPickups')" ><i class="fa fa-home" aria-hidden="true"></i>
+          Pickups (C)</a>
+        <a (click)="SubCatClickedD('cShowDeliveries')" ><i class="fa fa-users" aria-hidden="true"></i>
+          Deliveries (C)</a>
+        <a (click)="SubCatClickedD('cShowPickedUps')" ><i class="fa fa-home" aria-hidden="true"></i>
+          Picked Up (C)</a>
+        <a (click)="SubCatClickedD('cShowDelivered')" ><i class="fa fa-users" aria-hidden="true"></i>
+          Delivered (C)</a>  
+        <a (click)="SubCatClickedD('PaymentsClicked')" ><i class="fa fa-cogs" aria-hidden="true"></i>
+          Payments</a>
+
+      </nav>    
+    </section>
+    
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="start" type="overlay" menu-id="vendor-menu" (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+  
+  
+  <ion-content>
+    <section class="side_menu">
+      <nav>
+        <label>Welcome to,<br>Vendor Panel</label>
+      
+          <a class="m_table_head"  (click)="SubCatClickedD('OpenOrdersClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Open Orders</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('CurrentOrdersClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Accepted Orders</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('SearchOrderClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Search Order</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('DeliveredOrdersClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Delivered Orders</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('cCurrentOrdersClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Commercial Orders</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('cDeliveredOrdersClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Delivered Orders (C)</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('ProfileClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Profile</a>
+          <a class="m_table_head"  (click)="SubCatClickedD('PaymentsClicked')"><i class="fa fa-cog" aria-hidden="true"></i>
+            Payments</a>
+         
+      </nav>    
+    </section>
+    
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,1 @@
+jQuery("a[href*=#]:not([href=#])").click(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")||location.hostname==this.hostname){var e=jQuery(this.hash);if(e=e.length?e:jQuery("[name="+this.hash.slice(1)+"]"),e.length){var t="100";return jQuery("html,body").animate({scrollTop:e.offset().top-t},1e3),!1}}});

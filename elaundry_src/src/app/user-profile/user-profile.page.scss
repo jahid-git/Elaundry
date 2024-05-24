@@ -1,0 +1,31 @@
+$submit_color:#329d31;
+$blue_bg:#008bff;
+$light_grey:#989898;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+.toolbar {
+    background: $blue_bg;
+    background-color: $blue_bg;
+}
+
+.heading {
+    font-size: 10px;text-transform: capitalize;
+              font-family: 'Montserrat', sans-serif;
+}
+
+.input_class{
+    padding: 5px; border: 1px rgb(192,192,192) solid; border-radius: 3px;
+}
+
+.po-btn {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    background: $submit_color;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

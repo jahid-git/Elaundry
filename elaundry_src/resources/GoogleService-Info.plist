@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>582664145474-slilkrfkcmqj8uhfm7mcgnlrfj1nn8rh.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBPuSoxx08E8alZuFQRZk6kjikcMXl1te8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>582664145474</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>bd.com.elaundry.ElaundryBangladesh</string>
+	<key>PROJECT_ID</key>
+	<string>elaundry-a4322</string>
+	<key>STORAGE_BUCKET</key>
+	<string>elaundry-a4322.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:582664145474:ios:c304ecf1425d3f7c033bdb</string>
+	<key>DATABASE_URL</key>
+	<string>https://elaundry-a4322.firebaseio.com</string>
+</dict>
+</plist>

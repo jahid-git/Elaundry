@@ -1,0 +1,171 @@
+{
+  "project_info": {
+    "project_number": "582664145474",
+    "firebase_url": "https://elaundry-a4322.firebaseio.com",
+    "project_id": "elaundry-a4322",
+    "storage_bucket": "elaundry-a4322.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582664145474:android:008ab226fbaf2395033bdb",
+        "android_client_info": {
+          "package_name": "bd.com.elaundry.ElaundryBangladesh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582664145474-28lhjl4l4n9t7gl8useo5o17fbs3rt9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bd.com.elaundry.ElaundryBangladesh",
+            "certificate_hash": "942a0d68ba8a8e787beab946fc645aceaf49ae37"
+          }
+        },
+        {
+          "client_id": "582664145474-slilkrfkcmqj8uhfm7mcgnlrfj1nn8rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bd.com.elaundry.ElaundryBangladesh",
+            "certificate_hash": "77a1f1f16c1e2f893de415cb9a1b748037d5ee0b"
+          }
+        },
+        {
+          "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDoFN6RIL8qWUEcG9uAQ0EBaskTkQIg20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bd.com.elaundry.ElaundryBangladesh"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582664145474:android:066cdf21d8324a48033bdb",
+        "android_client_info": {
+          "package_name": "bd.com.elaundry.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDoFN6RIL8qWUEcG9uAQ0EBaskTkQIg20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bd.com.elaundry.ElaundryBangladesh"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582664145474:android:e547d6f5b6ffe4c4033bdb",
+        "android_client_info": {
+          "package_name": "bd.com.elaundry.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDoFN6RIL8qWUEcG9uAQ0EBaskTkQIg20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bd.com.elaundry.ElaundryBangladesh"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582664145474:android:60cea4e4cf60ed6c033bdb",
+        "android_client_info": {
+          "package_name": "bd.com.elaundry.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDoFN6RIL8qWUEcG9uAQ0EBaskTkQIg20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582664145474-ji53aa4rstsvfkr6i9l79hbacpgg52f4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "582664145474-cpga2geqq8ol375488hvcr2ihtnc4fa4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bd.com.elaundry.ElaundryBangladesh"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

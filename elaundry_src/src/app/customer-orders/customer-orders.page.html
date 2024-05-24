@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <ion-toolbar class="toolbar" color="#008bff">
+          <ion-buttons slot="start">
+            <ion-button (click)="BackPressed()">
+              <ion-icon color="light" name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title style="color: white;">My Orders</ion-title>
+        </ion-toolbar>
+        <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <div style="width: 100%;height: auto;border-bottom: 1px #e0e0e1 solid;font-family: 'Montserrat', sans-serif; padding: 5px;" 
+                *ngFor="let order of orders;let i=index" (click)="ViewOrderDetails(order)">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="8">
+                <div style="position: relative;">
+                  <label style="color: black;font-size: 25px;position: relative;">Order ID #{{order.orderid}}</label><br>
+                  <label style="color: black;font-size: 12px;position: relative;">Pickup Date & Time</label><br>
+                  <label style="color: grey;font-size: 12px;position: relative;"
+                      >{{DateFormat(order.pickupdate)}} & {{ConvertSlot(order.pickuptimeslotfrom+'-'+order.pickuptimeslotto)}}</label><br>
+                  
+                  <label style="color: black;font-size: 12px;position: relative;top: 5px;">Delivery Date & Time</label><br>
+                  <label style="color: grey;font-size: 12px;position: relative;"
+                      >{{DateFormat(order.deliverydate)}} & {{ConvertSlot(order.deliverytimeslotfrom+'-'+order.deliverytimeslotto)}}</label>
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div style="text-align: center;">
+                  <label style="color: white;font-size: 10px;position: relative;padding: 3px;"
+                  [ngStyle]="order.orderstatus == 'Order Placed'?{'background-color':'green'} : 
+                            order.orderstatus == 'Out for Pickup'?{'background-color':'orange'} : 
+                            order.orderstatus == 'Out for Delivery'?{'background-color':'pink'} : 
+                            order.orderstatus == 'Delivered'?{'background-color':'grey'} : 
+                            order.orderstatus == 'Canceled'?{'background-color':'red'} : 
+                            {'background-color':'red'}"
+                  >{{order.orderstatus}}</label><br>
+                  <label style="color: black;font-size: 20px;position: relative; margin-top: 10px;">Price</label><br>
+                  <label style="color: #008bff;font-size: 25px;position: relative;font-weight: 900;">৳ {{order.bill}}</label><br>
+                  <label style="color: green;font-size: 15px;position: relative;font-weight: 700;">{{order.paymentstatus}}</label>
+                  <label *ngIf="order.paymentstatus == '' && order.orderstatus != 'Canceled'" 
+                    style="color: green;font-size: 15px;position: relative;font-weight: 700;"
+                    (click)="PayNowClicked(order);$event.stopPropagation()">
+                    Pay Now</label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+</ion-content>

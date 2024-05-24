@@ -1,0 +1,43 @@
+$blue_bg:#008bff;
+$submit_color:#329d31;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+.toolbar{
+    background: $blue_bg;
+    background-color: $blue_bg;
+}
+
+@media(max-width:576px){
+    .hide-xs{
+        display: none;
+    }
+}
+
+@media(min-width:576px) and (max-width:2000px) {
+    .hide-xl{
+        display: none;
+    }
+}
+
+.top-logo{
+    width: 150px;
+    height: 150px;
+    margin-top: 5px; 
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.welcome-text{
+    font-size: 20px;
+    font-weight: bold;
+    color: green($color: #000000);
+    font-family: 'Courier New';
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;    
+    
+}
+

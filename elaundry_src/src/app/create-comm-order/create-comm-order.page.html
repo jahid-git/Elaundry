@@ -1,0 +1,378 @@
+<ion-header  *ngIf="isSelectItems" style="padding: 0%;">
+  
+  <ion-toolbar class="toolbar" color="#008bff">
+    <ion-title style="color: white;">Schedule a wash</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+     
+</ion-header>
+
+<ion-header  *ngIf="isSelectPickup || isSelectDelivery" style="padding: 0%;">
+  
+        <ion-toolbar class="toolbar" color="#008bff">
+          <ion-title style="color: white;">Schedule a wash</ion-title>
+          <ion-buttons slot="start">
+            <ion-button color="light" (click)="BackPressed()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      
+</ion-header>
+
+<ion-header *ngIf="isShowDetails">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;height: 100%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <ion-toolbar class="toolbar" color="#008bff">
+          <ion-title style="color: white;font-family: 'Montserrat', sans-serif;">Order Details</ion-title>
+          <ion-buttons slot="start">
+            <ion-button color="light" (click)="BackPressed()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+
+
+<ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+
+
+<ion-content style="height: 100%; width: 100%;background: #f9f9fb;background-color: #f9f9fb;"
+*ngIf="isSelectItems || isSelectPickup || isSelectDelivery" 
+>
+
+<ion-grid style="padding: 0%;">
+  <ion-row style="padding: 0%;height: 100%;">
+    <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+      <div>
+        
+
+  <div *ngIf="isSelectItems" style="background-color: #f9f9fb;background: #f9f9fb;height: 100%;">
+   
+
+    <section style="background-color: #f9f9fb;background: #f9f9fb;">
+     
+    
+      <div style="margin-top: 10px;" >
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let item of customer.items;let i=index"
+            size-lg="6" size-xl="6" size-md="6" size-sm="12" size-xs="12">
+
+            
+        <div style="color: black; font-family: sans-serif; height: auto; font-family: 'Montserrat', sans-serif;
+          background-color: white;background-color: white;border-bottom: 1px solid rgb(234, 236, 238);" 
+          >
+         <div style="position: relative;"> 
+            <img [src]="GetSrc(item.img)" style="width: 40px;height: 40px;margin: 10px;">
+          <div style="position: absolute; left: 60px;top: 10px;">
+            <label style="font-size: 15px;font-weight: 400;">{{item.name}} </label>
+            <br>
+            <label style="color: #008bff;font-weight: 600;font-size: 15px;">৳ {{item.price | number : '1.2-2'}}</label>
+          </div>
+          <div style="position: absolute; right: 10px;top: 10px;">
+            <ion-input type="number" class="form-control" placeholder="qty" (ionChange)="UpdateCbillEntries()" [(ngModel)]="item.qty"></ion-input>
+          </div>
+        </div>
+         
+        </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <ion-label *ngIf="customer.items.length == 0" style="width: 100%;">
+          <div *ngIf="!isLoading" style="margin: 14px; text-align: center;">
+            Our operation is not available in your selected area. We will be opening in this area as soon as possible. Thank you for your patience
+          </div>
+        </ion-label>
+      </div> 
+  
+    </section>
+  </div>
+
+  <div style="width: 100%; background: #3685f4;position: relative;" *ngIf="isSelectPickup || isSelectDelivery">
+    <div style="padding:15px; position: relative; width: 100%;height: auto;">
+      <label style="font-weight: 900; float: left; color: #ffffff;font-size: 25px;">Pickup
+        <span style="font-weight: 400;font-size: 20px;">Schedule</span></label>
+      <img style="width: 30px;height: auto;float: right;" src="../assets/w2_icon.png">
+    </div>
+    <div style="padding:15px; position: relative; width: 100%;height: auto; margin-top: 30px;">
+      <label style="font-weight: 100; color: #ffffff;font-size: 15px;">SELECT PICKUP DATE</label>
+      <div style="background-color: #ffffff;width: 100%; height: 40px;position: relative;
+            border-radius: 5px;margin-top: 5px;">
+        <label class="date-label" *ngIf="false">14/07/2020</label>
+        <ion-datetime displayFormat="DD/MMM/YYYY"  class="date-label"
+          min="{{minDate}}" max="{{maxDate}}"  value="{{dateSelect}}"
+          (ionChange)="DateSelected()" [(ngModel)]="dateSelect" style="width: 100%;"
+          >
+        </ion-datetime>
+        <img src="../assets/calander_icon.png" style="width: 25 px;height: 25px;float: right;
+            position: absolute; top: 50%;right: 5%;transform: translate(0%,-50%);">
+      </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px; position: relative; width: 100%;height: auto; 
+        margin-top: 1px; padding-bottom: 30px;"
+      (click)="ShowTimeSlotsClicked()" *ngIf="currentSelected != undefined">
+      <label style="font-weight: 100; color: #ffffff;font-size: 15px;">PICKUP TIME SLOT</label>
+      <div style="background-color: #ffffff;width: 100%; height: 40px;position: relative;
+            border-radius: 5px;margin-top: 5px;">
+        <label class="date-label">{{ConvertSlot(currentSelected)}}</label>
+        <img src="../assets/down_arrow_icon.png" style="width: 25 px;height: 15px;float: right;
+            position: absolute; top: 50%;right: 5%;transform: translate(0%,-50%);">
+      </div>
+    </div>
+  </div>
+
+
+  <div style="width: 100%; background: #ffffff;position: relative;" *ngIf="isSelectPickup || isSelectDelivery">
+    <img src="../assets/ui_down_arrow.png" style="width: 20px; height: 10px; position: absolute;
+      left: 50%;transform: translate(-50%);">
+    <div style="padding:15px; position: relative; width: 100%;height: auto;">
+      <label style="font-weight: 900; float: left; color: #000000;font-size: 25px;">Delivery
+        <span style="font-weight: 400;font-size: 20px;">Schedule</span></label>
+      <img style="width: 40px;height: auto;float: right;" src="../assets/delivery_icon.png">
+    </div>
+    <div style="padding:15px; position: relative; width: 100%;height: auto; margin-top: 40px;">
+      <label style="font-weight: 100; color: #000000;font-size: 15px;">SELECT DELIVERY DATE</label>
+      <div style="background-color: #ffffff;width: 100%; height: 40px;position: relative;
+                border-radius: 5px;margin-top: 5px;border: grey 1px solid;">
+        <label class="date-label" *ngIf="false">14/07/2020</label>
+        <ion-datetime displayFormat="DD/MMM/YYYY"   class="date-label"
+            min="{{minDelDate}}" max="{{maxDelDate}}" value="{{delDateSelect}}"
+            (ionChange)="DelDateSelected()" [(ngModel)]="delDateSelect" style="width: 100%;"
+            >
+        </ion-datetime>
+        <img src="../assets/calander_icon.png" style="width: 25 px;height: 25px;float: right;
+                position: absolute; top: 50%;right: 5%;transform: translate(0%,-50%);">
+      </div>
+    </div>
+    <div style="padding:15px; position: relative; width: 100%;height: auto; margin-top: 1px;" 
+      (click)="ShowDelTimeSlotsClicked()"  *ngIf="currentDelSelected != undefined">
+      <label style="font-weight: 100; color: #000000;font-size: 15px;">DELIVERY TIME SLOT</label>
+      <div style="background-color: #ffffff;width: 100%; height: 40px;position: relative;
+                border-radius: 5px;margin-top: 5px;border: grey 1px solid;">
+        <label class="date-label">{{ConvertSlot(currentDelSelected)}}</label>
+        <img src="../assets/down_arrow_icon.png" style="width: 25 px;height: 15px;float: right;
+                position: absolute; top: 50%;right: 5%;transform: translate(0%,-50%);">
+      </div>
+    </div>
+    <div class="submit-btn" (click)="ProceedClicked()">
+      <label style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;">Submit</label>
+    </div>
+  </div>
+  
+  
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+</ion-content>
+
+
+<ion-content *ngIf="isShowDetails">
+ 
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;height: 100%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+ 
+        <div
+          style="width: 100%;height: 100%;background-color: #f9f9fb;position: relative;font-family: 'Montserrat', sans-serif;">
+
+          <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 10px;">
+            <label style="color: #989898;position: relative;
+                  margin-left: 10px;font-size: 12px;">CUSTOMER DETAILS</label>
+          </div>
+          <div style="width: 100%;height: auto;background-color: white;
+                      border-bottom: 1px solid rgb(234, 236, 238);position: relative;margin-top: 10px;">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Full Name</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">{{customer.name}}</p>
+                  </div>
+                </ion-col>
+                <ion-col size="6">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Mobile Number</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">{{customer.mobile}}</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+
+          <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+            <label style="color: #989898;position: relative;
+                  margin-left: 10px;font-size: 12px;">PICKUP DETAILS</label>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: white;
+                      border-bottom: 1px solid rgb(234, 236, 238);position: relative;margin-top: 10px;">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Date & Time Slot</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">
+                      {{DateFormat(dateSelect)}} & {{ConvertSlot(currentSelected)}}</p>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Address</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">{{customer.address}}</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+
+          <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+            <label style="color: #989898;position: relative;
+                  margin-left: 10px;font-size: 12px;">DELIVERY DETAILS</label>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: white;
+                      border-bottom: 1px solid rgb(234, 236, 238);position: relative;margin-top: 10px;">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Date & Time Slot</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">
+                      {{DateFormat(delDateSelect)}} & {{ConvertSlot(currentDelSelected)}}</p>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div>
+                    <p style="color:#989898;font-size:10px;" class="pad-marg-0">Address</p>
+                    <p style="color:black;font-size:17px;" class="pad-marg-0">{{customer.address}}</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+            <label style="color: #989898;position: relative;
+                  margin-left: 10px;font-size: 12px;">ORDER ITEMS DETAILS</label>
+          </div>
+
+          <div style="background-color: #e5e5e5; margin-top: 5px;position: relative;">
+            <label style="color: #000000;font-size: 12px;padding: 8px;margin: 0;">Item List</label>
+            <label style="color: #000000;font-size: 12px;position: absolute;right: 5px;top: 0px;">Qty</label>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: white;
+                      position: relative;margin-top: 10px;">
+            <ion-grid class="ion-no-padding">
+              <ion-row class="ion-no-padding">
+                <ion-col size="12" class="ion-no-padding">
+                  <div style="background-color: white; margin-top: 5px;position: relative;
+                          border-bottom: 1px solid rgb(234, 236, 238);" *ngFor="let item of cbill_entries">
+
+                    <div style="position: relative;"> 
+                        <img [src]="GetSrc(item.img)" style="width: 40px;height: 40px;margin: 10px;">
+                      <div style="position: absolute; left: 60px;top: 10px;">
+                        <label style="font-size: 15px;font-weight: 400;">{{item.name}} </label>
+                        <br>
+                        <label style="color: #008bff;font-weight: 600;font-size: 15px;"> ৳ {{item.price | number : '1.2-2'}}</label>
+                      </div>
+                      <div style="position: absolute; right: 10px;top: 10px;">
+                        <label class="item_qty"> {{item.qty}} </label>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+            <label style="color: #989898;position: relative;
+                  margin-left: 10px;font-size: 12px;">TOTAL PRICE</label>
+          </div>
+
+          <div style="width: 100%;height: auto;background-color: white;
+            border-bottom: 1px solid rgb(234, 236, 238);position: relative; margin-top: 10px;">
+            <div style="padding: 5px;">
+              <label style="color: black;position: relative;
+                margin-left: 10px;font-size: 17px;">Total Items</label>
+              <label style="color: black;position: relative; float: right;
+                margin-right: 10px;font-size: 17px;">{{GetTotalQty()}}</label>
+            </div>
+            <div style="padding: 5px;">
+              <label style="color: black;position: relative;
+                margin-left: 10px;font-size: 17px;">Total Value</label>
+              <label style="color: #008bff;position: relative; float: right;font-weight: 900;
+                margin-right: 10px;font-size: 17px;">৳ {{GetTotalPayable() | number : '1.2-2'}}</label>
+            </div>
+          </div>
+
+          <div style="width: 100%;height: auto;
+          border-bottom: 1px solid rgb(234, 236, 238);position: relative; margin-top: 10px;">
+            <div style="padding: 5px; text-align: center;">
+              <label style="color: black;position: relative;
+              font-size: 8px;">By tapping Place Order, I agree to elaundry's
+                <span style="color: purple;cursor: pointer;" (click)="GoToTnc()">Terms and Conditions</span></label>
+
+            </div>
+          </div>
+
+        
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+
+
+
+
+
+<ion-footer *ngIf="isShowTotals" style="background: white;">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+  <div style="height: 50px;width: 100%;">
+  <label style="font-size: 17px; margin-left: 20px; font-weight: 500;font-family: 'Montserrat', sans-serif; 
+  position: absolute;top: 50%;transform: translate(0%,-50%);">
+    Total Price <span style="font-weight: 800;">৳{{GetTotal() | number : '1.2-2'}}</span></label>
+  
+    <img *ngIf="!isLoading" style="background: #329d31; height: 100%; width: 50px;position: absolute;right: 0;" (click)="ProceedClicked()"
+           src="../assets/green_proceed.png" >
+   
+  </div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-footer>
+
+<ion-footer *ngIf="isProceedToOrder" (click)="PlaceOrderClicked()" style="height: 50px;width: 100%;">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <div style="height: 30px;width: 80%; text-align:center; display: flex;justify-content: center;align-items: center;" class="po-btn" >
+          <span id="comm_order" style="color: white;">Place Order</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

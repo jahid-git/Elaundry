@@ -1,0 +1,13 @@
+<ion-content style="height: 100%;width: 100%;">
+  <div style="height: 100%;width: 100%;">
+  <agm-map [style.height.px]="height" (mapReady)="MapIsReady()" [zoom]="18" 
+    [latitude]="currentLat" [longitude]="currentLong" (centerChange)="MapCenterChanged($event)" #agmMap>
+    <agm-marker [latitude]="centerLat" [longitude]="centerLong"
+    ></agm-marker>
+    
+  </agm-map>
+  <button style="width: 100%;height: 40px;color: white;background: blue;position:absolute;
+    text-align: center;bottom: 0; margin-bottom: 0px;"
+     (click)="Done()">Done</button>
+  </div>
+</ion-content>

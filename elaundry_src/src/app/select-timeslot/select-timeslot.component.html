@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Time Slot</ion-title>
+    <ion-button slot="end" color="danger" float="right" style="margin-right: 10px;" (click)="CancelClicked()"> X </ion-button>
+  </ion-toolbar>
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content padding>
+
+<section >
+    
+      <div
+        *ngFor="let timeslot of timeslots" style="vertical-align: middle;" (click)="SlotSelected(timeslot.timeslot)" >
+                    
+        <p style="margin-top: 5px;"><label class="pack_label" [class.selected]="timeslot.timeslot === current_selected">
+          {{ConvertSlot(timeslot.timeslot)}}</label>
+        </p>
+       
+    
+      </div>
+     
+</section>
+</ion-content>
+

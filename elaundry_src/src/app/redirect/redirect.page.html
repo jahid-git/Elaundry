@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Redirect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <label style="width: 75px;" position="start">redirect to</label><br>
+    <input style="width: 200px;" [(ngModel)]="url"  placeholder="url">
+  </ion-item>
+  
+    <ion-button (click)="Go()">Done</ion-button>
+
+</ion-content>

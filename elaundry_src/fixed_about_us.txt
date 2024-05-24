@@ -1,0 +1,25 @@
+<ion-content style="text-align: center;">
+<div style="padding: 50px; font-family: 'Roboto', sans-serif;">
+  <b>Menu</b><br><br>
+  Chai is a symbol of unity and togetherness. The power of chai bring people, whether young student enjoying paper cups of chai during cold morning or enjoying a short chai break with your colleagues at work, chai became the universal contact point for people. Chai manages to provide a feeling of belonging and comfort to those consuming it. Chai is so much more than a beverage it’s a ritual. As such, chai quickly became an important part of our day.
+  <br>
+  Chai has transcended from being just a simple drink to being an occasion to spend quality time with families and friends. Almost any topic can be discussed ranging from politics to history to music or philosophy by having a cup of CHAI.
+  <br><br><br>
+  <b> What’s in your cup?</b><br><br>
+  Chai Naka consists of a tea base, fresh ginger and eight freshly ground spices
+  <br>
+  <img src="../assets/a1.jpg" style="height: 150px; width: 150x;">
+  <br><br>
+  <b>Spices</b><br><br>
+  Masala chai means spiced tea in Hindi which is why we use eight different spices in our blend. To ensure a flavorful cup, we freshly grind or crack each spice in small batch 
+  <br>
+  <img src="../assets/a2.jpg" style="height: 150px; width: 150x;">
+  <br><br>
+  <b>Ginger</b><br><br>
+  Raw, fresh ginger root is an amazing cure for nausea and a powerful anti-inflammatory (and therefore helps reduce joint pain and stiffness). That’s why we hand peel ginger, finely grate it, and mix it with our spices to add a subtle kick.
+  <br><br><br>
+  <b>Fresh Ingredients</b><br><br>
+  Our ingredients include black assam tea, fresh ginger, organic honey, and eight different spices including ceylon cinnamon, black pepper, and cardamom. In our unique rooibos chai blend, we replace the black tea with South African rooibos for a delicious caffeine-free option.
+  
+</div>
+</ion-content>

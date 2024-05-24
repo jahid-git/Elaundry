@@ -1,0 +1,172 @@
+<div *ngIf="false">
+
+<ion-header *ngIf="!isShowWelcome">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <ion-buttons slot="start" class="hide-xl" style="float: left; margin-top: 10px;">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <img src="../assets/logo.jpg" class="top-logo"> 
+  <p class="main_title">elaundry<span class="hide-xs">On Demand Laundry Service - Bangladesh</span></p>
+  <p class="header_link_section hide-xs">
+    <a (click)="go('customer-web')" >Home</a>
+    <a  >About Us</a>
+    <a  >Contact Us</a>
+    <a *ngIf="!isLoggedIn" (click)="go('login')" >Login</a>
+    <a *ngIf="isLoggedIn" style="color: red; text-decoration: underline;" (click)="LogoutClicked()" >Logout</a>
+    <a *ngIf="isLoggedIn" (click)="MyOrdersClicked()" >My Orders</a>
+  </p>
+  
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+
+
+<ion-content  *ngIf="!isShowWelcome">
+  
+  
+
+<div *ngIf="!isLoggedIn">
+
+  <ion-slides loop="true" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let banner of banners">
+      <img [src]="GetImgSrc(banner.img)" style="width: 100%;height: auto;">
+    </ion-slide>
+  </ion-slides>
+
+  <section  padding>
+    <h3 style="margin-left: 20px; padding-bottom: 20px; border-bottom: 1px solid #D0D0D0;">Our Services</h3>
+   
+    <ion-grid>
+      <ion-row>
+
+            <ion-col [ngClass]="{ odd: odd, even: even }" 
+                  size-xs="6" size-sm="4" size-lg="2" 
+                  *ngFor="let service of services;let i = index; let odd=odd; let even=even">
+              
+                <ion-card (click)="ServiceClicked()" >
+                
+                  <img class="service_img" [src]="GetSrc(service.img)"/>
+                  <label class="service_title" text-center>{{service.name}}</label>
+                  
+                </ion-card>
+             
+            </ion-col>
+         
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+</div> 
+
+<div *ngIf="isLoggedIn">
+
+  <ion-list>
+    <ion-item lines="none">
+      <h4 slot="start" padding>Welcome, {{user.name}}</h4>
+      <ion-button slot="end" *ngIf="user.type == 'commercial'" size="small" (click)="CommerialOrderClicked()">Create Order</ion-button>
+    </ion-item>
+  
+    <ion-item lines="none">
+    <ion-slides loop="true" pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let banner of banners">
+      <img [src]="GetImgSrc(banner.img)" style="width: 100%;height: auto;">
+      </ion-slide>
+      </ion-slides>
+    </ion-item>
+  </ion-list>
+
+
+  <section  padding *ngIf="user.type == 'residential'">
+    <h3 style="margin-left: 20px; padding-bottom: 20px; border-bottom: 1px solid #D0D0D0;">Place Order</h3>
+   
+    <ion-grid>
+      <ion-row>
+
+        <ion-col [ngClass]="{ odd: odd, even: even }" 
+              size-xs="6" size-sm="4" size-lg="2" 
+              *ngFor="let service of services;let i = index; let odd=odd; let even=even">
+          
+            <ion-card (click)="ServiceSelected(service)" >
+            
+              <img class="service_img" [src]="GetSrc(service.img)"/>
+              <label class="service_title" text-center>{{service.name}}</label>
+              
+            </ion-card>
+        
+        </ion-col>
+         
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+</div>
+
+
+
+</ion-content>
+
+
+</div>
+
+<ion-content *ngIf="isShowWelcome">
+  <ion-slides loop="true" [options]="slideOpts" style="width: 100%; height: 100%;">
+    <ion-slide style="width: 100%; height: 100%;">
+      <div class="container">
+        <img class="logo_img" src="../assets/logo.png">
+        <img class="title_img" src="../assets/title.png">
+        <img class="dot_img" src="../assets/page_dot_1.png">
+        <div class="sign-in-button" (click)="go('login')">
+          <label>Sign In</label>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide style="width: 100%; height: 100%;">
+      <div class="container">
+        <img class="w_img" src="../assets/w2_icon.png">
+        <p class="w_title">Pickup</p>
+        <p class="w_desc">On your request our moustache man will be at your doorstep in no time</p>
+        <img class="dot_img" src="../assets/page_dot_2.png">
+        <div class="sign-in-button" (click)="go('login')">
+          <label>Sign In</label>
+        </div>
+      </div>
+    </ion-slide>
+
+    <ion-slide style="width: 100%; height: 100%;">
+      <div class="container">
+        <img class="w_img" src="../assets/w3_icon.png">
+        <p class="w_title">Wash</p>
+        <p class="w_desc">Nice clean washing <br>
+          every time</p>
+        <img class="dot_img" src="../assets/page_dot_3.png">
+        <div class="sign-in-button" (click)="go('login')">
+          <label>Sign In</label>
+        </div>
+      </div>
+    </ion-slide>
+
+    <ion-slide style="width: 100%; height: 100%;">
+      <div class="container">
+        <img class="w_img" src="../assets/w4_icon.png">
+        <p class="w_title">Delivery</p>
+        <p class="w_desc">Delivery with in 72 hours and express delivery on request</p>
+        <img class="dot_img" src="../assets/page_dot_4.png">
+        <div class="sign-in-button" (click)="go('login')">
+          <label>Sign In</label>
+        </div>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+
+<ion-content *ngIf="!isShowWelcome">
+  <div style="width:100%;height: 100%; text-align: center;">
+  <img src="../assets/loading.gif" style="width: 200px;height: 200px; position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);">
+</div>
+</ion-content>

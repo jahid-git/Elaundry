@@ -1,0 +1,125 @@
+$blue_bg:#008bff;
+$light_grey:#989898;
+$menu_color: #329d31;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+.toolbar{
+    background: $blue_bg;
+    background-color: $blue_bg;
+}
+
+
+.pad-marg-0{
+    padding: 0;
+    margin: 0;
+}
+
+.minus_button{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    background: red;
+    color: white;
+    font-weight: 900;
+    font-family: 'Tahoma';
+    font-size: 18px;
+    text-align: center;
+}
+
+.plus_button{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    background: green;
+    color: white;
+    font-weight: 900;
+    font-family: 'Tahoma';
+    font-size: 18px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.item_qty{
+    width: 50px;
+    height: 20px; 
+    background: white;
+    color: black;
+    font-weight: 500;
+    font-family: 'Tahoma';
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+}
+
+.timeslot_label{
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: black;
+    margin-right: 10px;
+    margin-top: 5px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: Verdana;
+    padding: 5px 10px 5px 10px;
+}
+
+.timeslot_label:hover{
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+.selected{
+    background: blue;
+    color: white;
+}
+
+.date-label{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+
+.po-btn{
+    position: absolute;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    background: $menu_color;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%,0%);
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.invert { filter: invert(100%); }
+
+.blue-bg{
+    padding:5px; 
+    margin: 5px; 
+    border: 0.25px white solid;
+    border-radius: 3px;
+    background-color: $blue_bg;
+    background: $blue_bg;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    --indicator-color: transparent !important;
+    --indicator-color-checked: transparent !important;
+}
+
+.i-seg-b-c{
+    padding:5px; margin: 5px; border: 0.25px grey solid;border-radius: 3px;
+              background-color: white;background: white;
+              --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+}
+
+.pay-button-class{
+    position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;
+}

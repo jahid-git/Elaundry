@@ -1,0 +1,31 @@
+.package_card{
+    width:auto;height:auto;
+    margin: auto;
+
+    :hover{
+        border: 1px solid greenyellow;
+    }
+
+    
+
+}
+
+.package_title{
+    display: block;
+    word-wrap: break-word;
+    font-size:15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    background: green;
+    pointer-events: none;
+}
+
+.offer_details{
+    display: block;
+    word-wrap: break-word;
+    font-size:12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px;
+    color:grey;
+    pointer-events: none;
+}

@@ -1,0 +1,88 @@
+<ion-header style="padding: 0%;">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <ion-toolbar class="toolbar" color="#008bff">
+          <ion-title style="color: white;">Profile</ion-title>
+          <ion-buttons slot="start">
+            <ion-button color="light" (click)="BackPressed()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content style="padding: 0%;">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="6" offset-lg="3" size-xl="6" offset-xl="3" style="padding: 0%;">
+
+        <ion-list class="ion-padding">
+
+
+          <div style="margin-top:10px">
+            <div>
+              <label class="heading">Mobile Number</label>
+            </div>
+            <div style="margin-top: 5px;">
+              <input type="text" [disabled]="true" [(ngModel)]="user.mobile" class="input_class">
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <div>
+              <label class="heading">FULL NAME</label>
+            </div>
+            <div style="margin-top: 5px;">
+              <input type="text" [(ngModel)]="user.name" class="input_class">
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <div>
+              <label class="heading">Complete Address</label>
+            </div>
+            <div style="margin-top: 5px;">
+              <textarea type="text" [(ngModel)]="user.address" class="input_class" rows="4"></textarea>
+            </div>
+          </div>
+
+          <div *ngIf="!isLoggedIn" style="margin-top:10px">
+            <div>
+              <label class="heading">Password</label>
+            </div>
+            <div style="margin-top: 5px;">
+              <input type="Password" [(ngModel)]="user.password" class="input_class">
+            </div>
+          </div>
+
+          <div *ngIf="!isLoggedIn" style="margin-top:10px">
+            <div>
+              <label class="heading">Confirm Password</label>
+            </div>
+            <div style="margin-top: 5px;">
+              <input type="Password" [(ngModel)]="user.cpassword" class="input_class">
+            </div>
+          </div>
+
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 14px; position: relative;" >
+    <div class="heading" style="font-size: 13px; text-align: center;">Before selecting location, please trun on you's device location.</div>
+    <div class="po-btn" style="background: #008bff;" (click)="SelectLocation()">
+      <label style="color: white; font-size: 10px;">Select Location</label>
+    </div>
+    <div class="po-btn" (click)="SaveProfileClick()">
+      <label style="color: white; font-size: 10px;">Save Profile</label>
+    </div>
+  </div>
+</ion-content>
+
+  

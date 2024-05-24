@@ -1,0 +1,457 @@
+<ion-header class="toolbar" color="#008bff">
+  <ion-toolbar class="toolbar" color="#008bff">
+    <ion-title style="color: white;font-family: 'Montserrat', sans-serif;">Order Details</ion-title>
+    <ion-button slot="end" color="danger" float="right" style="margin-right: 10px;" (click)="closeModal()"> X </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isEdit && !isCommercial">
+ 
+  <div>
+    <ion-card padding *ngIf="Viewer == 'admin'">
+      <h4>Select Pickup Time</h4>
+      <ion-item>
+        <ion-label position="floating">Select Pickup Date</ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY"  
+        min="{{minDate}}" max="{{maxDate}}"
+        (ionChange)="DateSelected()" [(ngModel)]="dateSelect"
+        >
+        </ion-datetime>
+      </ion-item>
+    
+      <section *ngIf="ShowSlots">
+        <p class="choose_timeslot_title">Select time slot for pikcup from the available slots on the selected date</p>
+        <ion-grid>
+          <ion-row>
+           <ion-col size-xl="2" size-lg="3" size-xs="12" size-sm="6" size-md="4" 
+             *ngFor="let timeslot of timeslot_arr"
+             
+             (click)="TimeSlotSelected(timeslot)" >
+                         
+             <p class="timeslot_label" [class.selected]="timeslot === currentSelected" >
+               {{timeslot}}
+             </p>
+         
+             </ion-col>
+           </ion-row>
+         </ion-grid>
+      </section>
+   
+    </ion-card>
+    <ion-card padding>
+      <ion-grid>
+        <ion-row>
+          <h4>Choose Service</h4>
+        </ion-row>  
+        <ion-row>
+          <div *ngFor="let service of services;let i = index">
+          <ion-col size-xs="6" size-sm="3" size-lg="2">
+            <section class="service_card" (click)="ServiceSelected(service)">
+              <ion-card class="service_card">
+              
+                <img class="service_img" [src]="GetSrc(service.img)" style="width: 50px;height: 50px;"/>
+                <label class="service_title" text-center>{{service.name}}</label>
+                
+              </ion-card>
+            </section>
+          </ion-col>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-list>
+            <ion-item *ngFor="let item of orderEntriesEdit;let i = index">
+                <section>
+                  
+                    <label style="width: 50px; height: auto;">{{i+1}}</label>
+                    <label style="width: 150px; height: auto;">{{item.name}}</label>
+                    <ion-button size="small" [disabled]="item.qty == 1" (click)="item.qty=item.qty-1">-</ion-button>
+                    <label>{{item.qty}}</label>
+                    <ion-button size="small" (click)="item.qty=ParseInt(item.qty)+ParseInt(1)">+</ion-button>
+                    <ion-button size="small" color="danger" (click)="orderEntriesEdit.splice(i,1)">X</ion-button>
+                
+                </section>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-card padding *ngIf="Viewer == 'admin'">
+      <h4>Select Delivery Time</h4>
+    <ion-item>
+      <ion-label position="floating">Select Delivery Date</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY"  
+      min="{{minDelDate}}" max="{{maxDate}}"
+      (ionChange)="DelDateSelected()" [(ngModel)]="deldateSelect"
+      >
+      </ion-datetime>
+      </ion-item>
+  
+      <section *ngIf="ShowDelSlots">
+        <p class="choose_timeslot_title">Select time slot for delivery from the available slots on the selected date</p>
+        <ion-grid>
+          <ion-row>
+           <ion-col size-xl="2" size-lg="3" size-xs="12" size-sm="6" size-md="4" 
+             *ngFor="let timeslot of del_timeslot_arr"
+             
+             (click)="DelTimeSlotSelected(timeslot)" >
+                         
+             <p class="timeslot_label" [class.selected]="timeslot === currentDelSelected" >
+               {{timeslot}}
+             </p>
+         
+             </ion-col>
+           </ion-row>
+         </ion-grid> 
+       
+      </section>
+     </ion-card>
+
+     <ion-card padding>
+
+     
+
+      <h4>Bill Details</h4>
+      <ion-item>
+        <ion-label>Total of Items</ion-label>
+        <ion-label>{{GetTotalOfItems() | number : '1.2-2'}}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!isCommercial">
+        <ion-label>Discount</ion-label>
+        <ion-label>{{GetDiscount() | number : '1.2-2'}}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="!isCommercial">
+        <ion-label>Delivery Charges</ion-label>
+        <ion-input type="number" [(ngModel)]="delCharge"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Total Payable</ion-label>
+        <ion-label type="number">{{GetTotalPayable() | number : '1.2-2'}}</ion-label>
+      </ion-item>
+     
+      <ion-label *ngIf="selectedCoupon != null && !isCommercial">{{selectedCoupon.couponcode}}</ion-label>
+      <ion-button  *ngIf="!isCommercial" (click)="SelectCoupon()">Select Coupon</ion-button>
+     
+     </ion-card>
+    <ion-button color="primary" (click)="CreateOrder()">Update Order</ion-button>
+    <ion-button color="primary" (click)="CancelEdit()">Cancel Edit</ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="isEdit && isCommercial">
+
+  <div>
+    <ion-card padding *ngIf="Viewer == 'admin'">
+      <h4>Select Pickup Time</h4>
+      <ion-item>
+        <ion-label position="floating">Select Pickup Date</ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY"  
+        min="{{minDate}}" max="{{maxDate}}"
+        (ionChange)="DateSelected()" [(ngModel)]="dateSelect"
+        >
+        </ion-datetime>
+      </ion-item>
+    
+      <section *ngIf="ShowSlots">
+        <p class="choose_timeslot_title">Select time slot for pikcup from the available slots on the selected date</p>
+        <ion-grid>
+          <ion-row>
+           <ion-col size-xl="2" size-lg="3" size-xs="12" size-sm="6" size-md="4" 
+             *ngFor="let timeslot of timeslot_arr"
+             
+             (click)="TimeSlotSelected(timeslot)" >
+                         
+             <p class="timeslot_label" [class.selected]="timeslot === currentSelected" >
+               {{timeslot}}
+             </p>
+         
+             </ion-col>
+           </ion-row>
+         </ion-grid>
+      </section>
+   
+    </ion-card>
+    <ion-card padding>
+      <ion-grid>
+       
+        <ion-row>
+          <ion-list>
+            <ion-item *ngFor="let item of orderEntriesEdit;let i = index">
+                <section>
+                  
+                    <label style="width: 50px; height: auto;">{{i+1}}</label>
+                    <label style="width: 150px; height: auto;">{{item.name}}</label>
+                    <ion-button size="small" [disabled]="item.qty == 1" (click)="item.qty=item.qty-1">-</ion-button>
+                    <label>{{item.qty}}</label>
+                    <ion-button size="small" (click)="item.qty=ParseInt(item.qty)+ParseInt(1)">+</ion-button>
+                    <ion-button size="small" color="danger" (click)="orderEntriesEdit.splice(i,1)">X</ion-button>
+                
+                </section>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-card padding *ngIf="Viewer == 'admin'">
+      <h4>Select Delivery Time</h4>
+    <ion-item>
+      <ion-label position="floating">Select Delivery Date</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY"  
+      min="{{minDelDate}}" max="{{maxDate}}"
+      (ionChange)="DelDateSelected()" [(ngModel)]="deldateSelect"
+      >
+      </ion-datetime>
+      </ion-item>
+  
+      <section *ngIf="ShowDelSlots">
+        <p class="choose_timeslot_title">Select time slot for delivery from the available slots on the selected date</p>
+        <ion-grid>
+          <ion-row>
+           <ion-col size-xl="2" size-lg="3" size-xs="12" size-sm="6" size-md="4" 
+             *ngFor="let timeslot of del_timeslot_arr"
+             
+             (click)="DelTimeSlotSelected(timeslot)" >
+                         
+             <p class="timeslot_label" [class.selected]="timeslot === currentDelSelected" >
+               {{timeslot}}
+             </p>
+         
+             </ion-col>
+             
+           </ion-row>
+         </ion-grid> 
+       
+      </section>
+     </ion-card>
+
+     <ion-card padding>
+
+  
+
+      <h4>Bill Details</h4>
+      <ion-item>
+        <ion-label>Total of Items</ion-label>
+        <ion-label>{{GetTotalOfItems() | number : '1.2-2'}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Total Payable</ion-label>
+        <ion-label type="number">{{GetTotalPayable() | number : '1.2-2'}}</ion-label>
+      </ion-item>
+     
+     </ion-card>
+    <ion-button color="primary" (click)="CreateOrder()">Update Order</ion-button>
+    <ion-button color="primary" (click)="CancelEdit()">Cancel Edit</ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="!isEdit">
+  <div
+    style="width: 100%;height: 100%;background-color: #f9f9fb;position: relative;font-family: 'Montserrat', sans-serif;">
+
+    <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 10px;">
+      <label style="color: #989898;position: relative;
+             margin-left: 10px;font-size: 12px;">CUSTOMER DETAILS</label>
+    </div>
+    <div style="width: 100%;height: auto;background-color: white;border-top: 1px solid grey;
+                border-bottom: 1px solid grey;position: relative;margin-top: 10px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Full Name</p>
+              <p style="color:black;font-size:17px;" class="pad-marg-0">{{Order.name}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Mobile Number</p>
+              <p (click)="Call(Order.mobile)" style="color:black;font-size:17px;" class="pad-marg-0">{{Order.mobile}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+
+    <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+      <label style="color: #989898;position: relative;
+             margin-left: 10px;font-size: 12px;">PICKUP DETAILS</label>
+    </div>
+
+    <div style="width: 100%;height: auto;background-color: white;border-top: 1px solid grey;
+                border-bottom: 1px solid grey;position: relative;margin-top: 10px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Date & Time Slot</p>
+              <p style="color:black;font-size:17px;" class="pad-marg-0">
+                {{DateFormat(Order.pickupdate)}} & {{ConvertSlot(Order.pickuptimeslotfrom+'-'+Order.pickuptimeslotto)}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="12">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Address</p>
+              <p style="color:black;font-size:17px;" class="pad-marg-0">{{Order.address}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" *ngIf="Order.assignedtopickup != null  && Order.orderstatus == 'Out for Pickup'">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Pickup Executive Details</p>
+              <p (click)="Call(Order.pick_mobile)" style="color:black;font-size:17px;" class="pad-marg-0">{{Order.assignedtopickup}} - {{Order.pick_mobile}} 
+              <span style="text-decoration: underline; color: blue;">Call</span></p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+
+    <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+      <label style="color: #989898;position: relative;
+             margin-left: 10px;font-size: 12px;">DELIVERY DETAILS</label>
+    </div>
+
+    <div style="width: 100%;height: auto;background-color: white;border-top: 1px solid grey;
+                border-bottom: 1px solid grey;position: relative;margin-top: 10px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Date & Time Slot</p>
+              <p style="color:black;font-size:17px;" class="pad-marg-0">
+                {{DateFormat(Order.deliverydate)}} & {{ConvertSlot(Order.deliverytimeslotfrom+'-'+Order.deliverytimeslotto)}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="12">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Address</p>
+              <p style="color:black;font-size:17px;" class="pad-marg-0">{{Order.address}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" *ngIf="Order.assignedtodelivery != null && Order.orderstatus == 'Out for Delivery'">
+            <div>
+              <p style="color:#989898;font-size:10px;" class="pad-marg-0">Delivery Executive Details</p>
+              <p (click)="Call(Order.del_mobile)" style="color:black;font-size:17px;" class="pad-marg-0">{{Order.assignedtodelivery}} - {{Order.del_mobile}}
+                <span style="text-decoration: underline; color: blue;">Call</span></p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+      <label style="color: #989898;position: relative;
+            margin-left: 10px;font-size: 12px;">ORDER ITEMS DETAILS</label>
+    </div>
+
+    <div style="background-color: #e5e5e5; margin-top: 5px;position: relative;">
+      <label style="color: #000000;font-size: 12px;padding: 8px;margin: 0;">Item List</label>
+      <label style="color: #000000;font-size: 12px;position: absolute;right: 5px;top: 0px;">Qty</label>
+    </div>
+
+    <div style="width: 100%;height: auto;background-color: white;
+                position: relative;margin-top: 10px;">
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-no-padding">
+          <ion-col size="12" class="ion-no-padding">
+            <div style="background-color: white; margin-top: 5px;position: relative;
+                    border-bottom: 1px solid rgb(234, 236, 238);" *ngFor="let item of orderEntries">
+
+              <div style="position: relative;"> 
+                  <img [src]="GetSrc(item.img)" style="width: 40px;height: 40px;margin: 10px;">
+                <div style="position: absolute; left: 60px;top: 10px;">
+                  <label style="font-size: 15px;font-weight: 400;">{{item.name}} </label>
+                  <br>
+                  <label style="color: grey;font-weight: 600;font-size: 15px;">{{item.servicename}}</label>
+                  <label style="color: #008bff;font-weight: 600;font-size: 15px;"> ৳ {{item.price | number : '1.2-2'}}</label>
+                </div>
+                <div style="position: absolute; right: 10px;top: 10px;">
+                  <label class="item_qty"> {{item.qty}} </label>
+                </div>
+              </div>
+             
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="!isCommercial" style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+      <label style="color: #989898;position: relative;
+             margin-left: 10px;font-size: 12px;">PROMO CODE</label>
+    </div>
+
+    <div *ngIf="!isCommercial" style="width: 100%;height: auto;background-color: white;border-top: 1px solid grey;
+      border-bottom: 1px solid grey;position: relative;margin-top: 10px;padding-top: 5px;padding-bottom: 5px;">
+      <label style="color: #008bff;position: relative;
+        margin-left: 10px;font-size: 17px;">PROMO CODE</label>
+      <label style="color: black;position: relative; float: right; margin-right: 10px;font-size: 17px;"
+          ><span *ngIf="selectedCoupon != undefined">{{Order.couponcode}}</span>
+                              <span *ngIf="selectedCoupon == undefined">None</span></label>
+    </div>
+
+    <div *ngIf="!isCommercial" style="width: 100%;height: auto;background-color: #f9f9fb;position: relative; margin-top: 20px;">
+      <label style="color: #989898;position: relative;
+             margin-left: 10px;font-size: 12px;">TOTAL PRICE</label>
+    </div>
+
+    <div style="width: 100%;height: auto;background-color: white;border-top: 1px solid grey;
+      border-bottom: 1px solid grey;position: relative; margin-top: 10px;">
+      <div style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Total Items</label>
+        <label style="color: black;position: relative; float: right;
+          margin-right: 10px;font-size: 17px;">{{GetTotalQty()}}</label>
+      </div>
+      <div  *ngIf="!isCommercial" style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Sub Total</label>
+        <label style="color: black;position: relative; float: right;
+          margin-right: 10px;font-size: 17px;">৳ {{GetTotal() | number : '1.2-2'}}</label>
+      </div>
+      <div  *ngIf="!isCommercial" style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Promo Code Discount</label>
+        <label style="color: black;position: relative; float: right;
+          margin-right: 10px;font-size: 17px;">৳ {{Order.discount | number : '1.2-2'}}</label>
+      </div>
+      <div  *ngIf="!isCommercial" style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Delivery Charges</label>
+        <label style="color: black;position: relative; float: right;
+          margin-right: 10px;font-size: 17px;">৳ {{Order.delcharges | number : '1.2-2'}}</label>
+      </div>
+      <div style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Total Value</label>
+        <label style="color: #008bff;position: relative; float: right;font-weight: 900;
+          margin-right: 10px;font-size: 17px;">৳ {{Order.bill | number : '1.2-2'}}</label>
+      </div>
+      <div  *ngIf="!isCommercial" style="padding: 5px;">
+        <label style="color: black;position: relative;
+          margin-left: 10px;font-size: 17px;">Payment Status</label>
+        <label style="color: #008bff;position: relative; float: right;font-weight: 900;
+          margin-right: 10px;font-size: 17px;">
+        <span *ngIf="Order.paymentstatus == 'Paid'">Paid</span>  
+        <span *ngIf="Order.paymentstatus != 'Paid'">Pending</span>  
+        </label>
+      </div>
+    </div>
+
+    <div style="width: 100%;height: 40px;background-color: #f9f9fb;
+    border-bottom: 1px solid grey;position: relative;"
+     *ngIf="Order.orderstatus == 'Order Placed' && Order.paymentstatus == ''"
+      (click)="CancelOrderClicked()">
+      <label style="position: absolute;top: 5px;left: 50%;transform: translate(-50%);color: white;
+      background: red; border-radius: 3px; height: 30px;width: 80%;text-align: center; padding-top: 5px;">Cancel Order</label>
+    </div>
+
+    <ion-button style="margin-right: 10px;" color="primary" 
+      *ngIf="Viewer == 'admin' || (Viewer == 'db' && Order.orderstatus == 'Out for Pickup')"
+      (click)="EditClicked()">Edit</ion-button>
+
+  </div>
+
+</ion-content>

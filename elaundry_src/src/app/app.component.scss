@@ -1,0 +1,81 @@
+$purpleLight:#302D43;
+$purpleDark:#282639;
+$neaoGreen:#92CF48;
+$lightGrey:#F4F6F9;
+$darkGrey:#EAEDF3;
+
+.icon_img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.option_label{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 15px;
+}
+
+.menu-line{
+    background:white;
+    left: 31px;
+    width: 528px;
+    height: 1px;
+    z-index: 73;
+}
+
+.side_menu{
+    background: $purpleLight;
+    color: white;
+    font-family: sans-serif;
+    nav {
+        
+        padding-bottom: 25px;
+
+        label{
+            padding: 25px;
+            display: block;
+            color: $purpleDark;
+            background: $darkGrey;
+        }
+
+        a{
+        display: block;
+        color:$darkGrey;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+            background: $purpleDark ;
+            border-left: 5px solid $neaoGreen;
+            padding: 10px 20px 10px 15px;   
+        }
+
+        &.active{
+            background: $purpleDark;
+            border-left: 5px solid $neaoGreen;
+            padding: 10px 20px 10px 15px;
+        }
+
+        
+
+        .fa{
+            margin-right: 10px;
+            color: $neaoGreen;
+        }
+    }
+}
+}
+
+.selected{
+    display: block;
+    color:$darkGrey;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    background: $purpleDark;
+    border-left: 5px solid $neaoGreen;
+    padding: 10px 20px 10px 15px;
+}

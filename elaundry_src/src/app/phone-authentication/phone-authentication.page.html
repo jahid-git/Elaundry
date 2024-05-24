@@ -1,0 +1,67 @@
+<ion-header class="toolbar" color="#008bff">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <ion-toolbar class="toolbar" color="#008bff">
+          <ion-buttons slot="end">
+            <ion-menu-toggle>
+              <img src="../assets/laundry_menu.png" style="height: 30px; width: 30px;">
+            </ion-menu-toggle>
+          </ion-buttons>
+          <img class="logo_img" src="../assets/logo.png">
+          <img class="title_img" src="../assets/title.png">
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content style="width: 100%;height: 100%;">
+  <ion-grid style="padding: 0%;">
+    <ion-row style="padding: 0%;">
+      <ion-col size-lg="8" offset-lg="2" size-xl="8" offset-xl="2" style="padding: 0%;">
+        <div style="width: 100%;height: 100%;">
+
+          <div *ngIf="isGetOtp">
+            <div class="main_text">
+              <label>Mobile Number</label>
+            </div>
+            <div class="sub_text">
+              <label  >Please Enter Mobile Number to Proceed</label>
+            </div>
+            <div class="mobile-input">
+              <input type="tel" maxlength="11" minlength="11" placeholder="Enter Mobile Number" [(ngModel)]="newMobileNumber">
+             </div>
+             <div class="submit-btn" (click)="sendLoginCode()">
+               <label style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;">Submit</label>
+             </div>
+
+          </div>
+          <section *ngIf="isVerifyOtp" style="position: relative;">
+            <div class="main_text">
+            <label >Please Enter 6 Digit OTP</label>
+            </div>
+            <div class="mobile-input">
+              <input type="number" maxlength="6" minlength="6" type="Number" [(ngModel)]="verificationCode">
+            </div>
+            <div class="submit-btn" (click)="verifyLoginCode()">
+              <label
+                style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;">Submit</label>
+            </div>
+
+            <div style="margin-top: 50px;text-align: center; " (click)="ReSendLoginCode()">
+              <label style="position: relative;text-align: center;color: black;">
+                <span *ngIf="secs == 0" style="color: blue;">Re-Send</span> <span *ngIf="secs != 0"> Re-Send OTP in
+                  {{secs}} Seconds</span>
+              </label>
+            </div>
+
+          </section>
+
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

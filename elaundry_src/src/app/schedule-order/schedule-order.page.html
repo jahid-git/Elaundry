@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ScheduleOrder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+  <ion-item>
+    <ion-label position="floating">Select Pickup Date</ion-label>
+    <ion-datetime displayFormat="DD/MMM/YYYY"  
+    min="{{minDate}}" max="{{maxDate}}"
+    (ionChange)="DateSelected()" [(ngModel)]="dateSelect"
+    >
+    </ion-datetime>
+    </ion-item>
+
+    <section *ngIf="ShowSlots">
+      <p class="choose_timeslot_title">Select time slot for pikcup from the available slots on the selected date</p>
+        <ion-list  *ngFor="let timeslot of timeslot_arr
+                              ; let i = index">
+          <ion-item (click)="TimeSlotSelected(i)">
+            {{timeslot}}
+          </ion-item>
+        </ion-list>
+      </section>
+
+</ion-content>

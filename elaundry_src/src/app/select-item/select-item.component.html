@@ -1,0 +1,22 @@
+<ion-content>
+<ion-card padding>
+  <ion-infinite-scroll zooming="true" direction="xy" style="width:400px;height:500px">
+
+  <section>
+    <ion-item style="width:400px">
+      <ion-label position="floating" name="title" >Search Item</ion-label>
+      <ion-input type="text" class="form-control" [(ngModel)]="SearchItemText" 
+          ></ion-input>
+    </ion-item>
+  
+    <div style="margin-top: 30px;" >
+      <p style="border-bottom: 1px dashed grey; color: black; font-family: sans-serif; height: 25px; padding-top: auto; padding-bottom: auto;" 
+        *ngFor="let item of SearchedItems();let i=index"
+        (click)="ItemSelected(item)">{{item.name}} ( {{item.price}} )
+      </p>
+    </div> 
+
+  </section>
+</ion-infinite-scroll>
+  </ion-card>
+</ion-content>
